@@ -1,0 +1,13 @@
+//
+// Created by Kim SAVAROCHE on 22/03/2017.
+//
+
+#ifndef NEURALNETWORKPROJECT_CLNEURONCONNECTION_H
+#define NEURALNETWORKPROJECT_CLNEURONCONNECTION_H
+
+struct CLNeuronConnection {
+    double weight;
+    double deltaWeight;
+};
+
+#endif //NEURALNETWORKPROJECT_CLNEURONCONNECTION_H
