@@ -2,7 +2,7 @@
 
 ## Objective : XOR
 
-topology: 2 4 1
+Topology: 2 4 1
 
 Prediction: 0 ^ 0 =  -5.02129e-309
 
