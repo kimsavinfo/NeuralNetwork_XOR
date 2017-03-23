@@ -10,7 +10,6 @@ bool isDataSizeCorrect(TrainingData &trainingData, const vector<unsigned int> &t
 }
 
 int main() {
-    generateTrainingData();
     TrainingData trainingData("trainingData.txt");
 
     vector<unsigned> topology;
@@ -24,14 +23,14 @@ int main() {
         ++trainingPass;
         cout << endl << "Pass: " << trainingPass;
 
-        showVectorVals("\nInputs:", inputVals);
+        showVectorValues("\nInputs:", inputVals);
         neuralNetwork.feedForward(inputVals);
 
         neuralNetwork.getResults(resultVals);
-        showVectorVals("Outputs:", resultVals);
+        showVectorValues("Outputs:", resultVals);
 
         trainingData.getTargetOutputs(targetVals);
-        showVectorVals("Targets:", targetVals);
+        showVectorValues("Targets:", targetVals);
         assert(targetVals.size() == topology.back());
         neuralNetwork.backPropagation(targetVals);
 

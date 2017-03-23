@@ -101,6 +101,7 @@ void CLNeuralNetwork::feedForward(const vector<double>& inputVals) {
         }
     }
 
+
     // Put bias to 1.0
     layers.back().back().setOutputVal(1.0);
 }

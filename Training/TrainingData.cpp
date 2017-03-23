@@ -82,35 +82,14 @@ void generateTrainingData() {
     ofstream outputFile ("trainingData.txt");
     if (outputFile.is_open()) {
         outputFile << "topology: 2 4 1\n";
-        const int modulo = 2;
 
         for (int iData = 2000; iData >= 0; --iData) {
-            int trainingCase = rand() % 4;
-            int number1 = 0;
-            int number2 = 0;
-            switch (trainingCase) {
-                case 0:
-                    number1 = 0;
-                    number2 = 0;
-                    break;
-                case 1:
-                    number1 = rand() % modulo;
-                    number2 = 0;
-                    break;
-                case 2:
-                    number1 = 0;
-                    number2 = rand() % modulo;
-                    break;
-                case 3:
-                    number1 = rand() % modulo;
-                    number2 = rand() % modulo;
-                    break;
-                default:
-                    break;
-            }
-            int result = number1 ^ number2;
+            int number1 = rand() % 2;
+            int number2 = rand() % 2;
+            int xorResult = number1 ^ number2;
+
             outputFile << "in: " << number1 << ".0 " << number2 << ".0\n";
-            outputFile << "out: " << result << ".0\n";
+            outputFile << "out: " << xorResult << ".0\n";
         }
 
         outputFile.close();
